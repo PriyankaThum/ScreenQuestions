@@ -12,7 +12,8 @@ namespace DecToRomanConverter
         {
             Console.WriteLine("Enter a decimal number");
             int input = int.Parse(Console.ReadLine());
-            string[] output = new string[10];
+            StringBuilder output = new StringBuilder();
+
             int x = 0;
             Dictionary<int, string> table = new Dictionary<int, string>()
             {
@@ -25,7 +26,7 @@ namespace DecToRomanConverter
                     if (input >= i.Key)
                     {
                         input -= i.Key;
-                        output[x] += i.Value;
+                        output.Append(i.Value);
                         x++;
                         break;
                     }
